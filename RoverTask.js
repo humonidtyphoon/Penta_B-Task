@@ -1,4 +1,4 @@
-//this Dictionary avoids using if conditoins, it has static values for each Direction on X and Y
+//this dictioniary has fixed values for each Direction on X and Y
 const advance = {
     F: { North: { x: 0, y: 1 }, East: { x: 1, y: 0 }, South: { x: 0, y: -1 }, West: { x: -1, y: 0 } },
     B: { North: { x: 0, y: -1 }, East: { x: -1, y: 0 }, South: { x: 0, y: 1 }, West: { x: 1, y: 0 } },
@@ -9,7 +9,8 @@ const rotate = {
     R: 1,
     L: -1
 };
-// each Direction will have a number represents it to help reducing Conditions     
+// each Direction will have a number representing it to help reducing Conditions     
+//either make the variable names lower case or uppercase
 const Directions = {
     North: 1,
     East: 2,
@@ -26,6 +27,7 @@ const Rover = class {
     // Constructor initialize the Rover with the start cordinations and start direction
     constructor(x, y, direction) {
         // check if placing the rover is valid. 
+        //change goodPlace to suitablePos or smth
         let goodPlace = true;
         for (let obstacle of Obstacles) {
             if (x === obstacle[0] && y === obstacle[1])
